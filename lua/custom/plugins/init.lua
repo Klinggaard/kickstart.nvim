@@ -26,4 +26,10 @@ vim.o.spell = true
 -- Toggle Code Suggestions on/off with CTRL-g in normal mode:
 vim.keymap.set('n', '<C-g>', '<Plug>(GitLabToggleCodeSuggestions)')
 
+-- Set makeprg to cmake build command
+vim.o.makeprg = 'cmake --build build'
+vim.keymap.set('n', '<C-m>', ':make<CR>', { desc = '[M]ake' })
+vim.keymap.set('n', '<leader><C-p>', ':cprevious<CR>', { desc = 'Previous make [D]iagnostic' })
+vim.keymap.set('n', '<leader><C-n>', ':cnext<CR>', { desc = 'Next make [D]iagnostic' })
+
 return {}
